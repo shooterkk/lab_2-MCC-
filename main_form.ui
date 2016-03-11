@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>415</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form1</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>381</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Рівняння</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>47</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>x''(t)+2·</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="delta_input">
+        <property name="minimumSize">
+         <size>
+          <width>31</width>
+          <height>31</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>x'(t)+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="w0_input">
+        <property name="minimumSize">
+         <size>
+          <width>31</width>
+          <height>31</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="minimumSize">
+         <size>
+          <width>41</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>²·x(t)=</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="f0_input">
+        <property name="minimumSize">
+         <size>
+          <width>31</width>
+          <height>31</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>cos(</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="w_input">
+        <property name="minimumSize">
+         <size>
+          <width>31</width>
+          <height>31</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>·t)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1" rowspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="minimumSize">
+      <size>
+       <width>179</width>
+       <height>180</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Початкові умови</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>24</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>x(0)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="x0_input">
+        <property name="minimumSize">
+         <size>
+          <width>91</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>91</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>28</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>x'(0)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="dx0_input">
+        <property name="minimumSize">
+         <size>
+          <width>91</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>91</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>151</width>
+          <height>61</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Побудувати графік</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" rowspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>381</width>
+       <height>311</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="x_t_tab">
+      <attribute name="title">
+       <string>x(t)</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="x_t_layout"/>
+     </widget>
+     <widget class="QWidget" name="x_dx_tab">
+      <attribute name="title">
+       <string>x'(x)</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="x_dx_layout"/>
+     </widget>
+     <widget class="QWidget" name="afc_tab">
+      <attribute name="title">
+       <string>A(w)</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="afc_layout"/>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="maximumSize">
+      <size>
+       <width>171</width>
+       <height>101</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Параметри графіку</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Права межа:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QSpinBox" name="ubound_input">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Крок:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QDoubleSpinBox" name="step_input">
+        <property name="decimals">
+         <number>5</number>
+        </property>
+        <property name="minimum">
+         <double>0.000010000000000</double>
+        </property>
+        <property name="maximum">
+         <double>1.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.000010000000000</double>
+        </property>
+        <property name="value">
+         <double>0.000010000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="maximumSize">
+      <size>
+       <width>171</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Шаблони</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="harmonic_rad">
+        <property name="text">
+         <string>Гармонічні колив.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="dying_rad">
+        <property name="text">
+         <string>Згасаючі колив.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="forced_rad">
+        <property name="text">
+         <string>Вимушені колив.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="other_rad">
+        <property name="text">
+         <string>Інше</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>harmonic_rad</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>template_selected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dying_rad</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>template_selected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>forced_rad</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>template_selected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>347</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x0_input</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>initval_change(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ubound_input</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>limit_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>540</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dx0_input</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>initval_change(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>build_graph()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>step_input</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Form</receiver>
+   <slot>step_change(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>517</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>w0_input</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>coef_edited(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>w_input</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>coef_edited(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>f0_input</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>coef_edited(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delta_input</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>coef_edited(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>initval_change(QString)</slot>
+  <slot>build_graph()</slot>
+  <slot>limit_change(int)</slot>
+  <slot>step_change(double)</slot>
+  <slot>template_selected()</slot>
+  <slot>coef_edited(QString)</slot>
+ </slots>
+</ui>
