@@ -13,7 +13,7 @@ from play import calc_for_plot
 import numpy as np
 
 app = QApplication(sys.argv)
-app.setApplicationName('Lab 1')
+app.setApplicationName('Lab 2')
 form_class, base_class = loadUiType('main_form.ui')
 
 
@@ -23,14 +23,14 @@ class MainWindow(QDialog, form_class):
         self.setupUi(self)
         self.x_t = StaticCanvas(self.x_t_tab,'$x(t)$')
         self.x_dx = StaticCanvas(self.x_dx_tab,'$\dot{x}(x)$')
-        self.afc = StaticCanvas(self.afc_tab)
         self.x_t_layout.addWidget(self.x_t)
         self.x_dx_layout.addWidget(self.x_dx)
-        self.afc_layout.addWidget(self.afc)
-        self.delta = 0
-        self.w0 = 0
-        self.f0 = 0
-        self.w = 0
+        self.r = 0.1
+        self.l = 0.1 #not 0
+        self.c = 0.1 #not 0
+        self.m = 0
+        self.s = 0
+        self.a = 0
         self.left_bound = 0
         self.right_bound = 1
         self.step = 0.00001
@@ -43,42 +43,44 @@ class MainWindow(QDialog, form_class):
         try:
             self.x_t.clear()
             self.x_dx.clear()
-            self.afc.clear()
-            self.delta = np.float64(self.delta_input.text())
-            self.w0 = np.float64(self.w0_input.text())
-            self.f0 = np.float64(self.f0_input.text())
-            self.w = np.float64(self.w_input.text())
+            self.r = np.float64(self.r_input.text())
+            self.l = np.float64(self.l_input.text())
+            self.c = np.float64(self.c_input.text())
+            self.m = np.float64(self.m_input.text())
+            self.s = np.float64(self.s_input.text())
+            self.a = np.float64(self.a_input.text())
+
         except:
             return
         try:
-            x, y, A = calc_for_plot(self.right_bound, self.step, self.x0, self.dx0, self.delta,self.w0, self.f0, self.w)
+            x, y= calc_for_plot(self.right_bound, self.step, self.x0, self.dx0, self.r,self.l, self.c, self.m,
+                                    self.s, self.a)
             self.x_t.plot(x[0], x[1])
             self.x_dx.plot(y[0], y[1])
-            self.afc.plot(A[0],A[1])
         except Exception as e:
             print(e)
 
     @pyqtSlot()
     def template_selected(self):
         sender = self.sender().objectName()
-        if sender == 'harmonic_rad':
-            self.delta = 0
-            self.w0 = 20
-            self.f0 = 0
-            self.w = 0
-            self.update_coefficients()
-        elif sender == 'dying_rad':
-            self.delta = 10
-            self.w0 = 1
-            self.f0 = 0
-            self.w = 0
-            self.update_coefficients()
-        elif sender == 'forced_rad':
-            self.delta = 5
-            self.w0 = 80
-            self.f0 = 3
-            self.w = 10
-            self.update_coefficients()
+        # if sender == 'harmonic_rad':
+        #     self.delta = 0
+        #     self.w0 = 20
+        #     self.f0 = 0
+        #     self.w = 0
+        #     self.update_coefficients()
+        # elif sender == 'dying_rad':
+        #     self.delta = 10
+        #     self.w0 = 1
+        #     self.f0 = 0
+        #     self.w = 0
+        #     self.update_coefficients()
+        # elif sender == 'forced_rad':
+        #     self.delta = 5
+        #     self.w0 = 80
+        #     self.f0 = 3
+        #     self.w = 10
+        #     self.update_coefficients()
 
     @pyqtSlot(int)
     def limit_change(self, value):
@@ -101,10 +103,13 @@ class MainWindow(QDialog, form_class):
             self.dx0 = value
 
     def update_coefficients(self):
-        self.delta_input.setText(str(self.delta))
-        self.w0_input.setText(str(self.w0))
-        self.f0_input.setText(str(self.f0))
-        self.w_input.setText(str(self.w))
+        self.r_input.setText(str(self.r))
+        self.l_input.setText(str(self.l))
+        self.c_input.setText(str(self.c))
+        self.m_input.setText(str(self.m))
+        self.s_input.setText(str(self.s))
+        self.a_input.setText(str(self.a))
+
 
     @pyqtSlot('QString')
     def coef_edited(self, value):
@@ -114,6 +119,6 @@ class MainWindow(QDialog, form_class):
 
 #-----------------------------------------------------#
 form = MainWindow()
-form.setWindowTitle('Лабораторна робота №1 - МСС')
+form.setWindowTitle('Лабораторна робота №2 - МСС')
 form.show()
 sys.exit(app.exec_())
